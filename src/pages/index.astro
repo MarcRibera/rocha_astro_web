@@ -1,0 +1,167 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+
+import FAQ from "@components/sections/misc/FAQ.astro";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import MainSection from "@/components/ui/blocks/MainSection.astro";
+import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
+
+---
+
+<MainLayout>
+  <span id="home"></span>
+  <HeroSection
+    title=`<span class="text-neutral-400"> Especialistas en reparación y venta de</span> <span
+        class="text-yellow-500 dark:text-orange-400">maquinaria</span>`
+    subTitle="50 años dedicados a la reparación y venta de maquinaria de construcción, jardinería, caravaning y generadors."
+    primaryBtn="Contacta con nosotros"
+    primaryBtnURL="#contacto"
+    withReview={true}
+    rating=`<span class="font-bold">4.9</span> / 5`
+    starCount={4}
+    alt="Motor de alta potencia ideal para maquinaria de construcción y jardinería"
+  />
+
+  <span id="servicios"></span>
+  <FeaturesGeneral
+    title=`Estos son los <span class="text-orange-500 dark:text-orange-400">Servicios</span> que tenemos para ti`
+    subTitle=""
+    alt="Servicios en cajas flotantes"
+    features={features}
+  />
+
+  <ClientsSection
+    title=`Respaldados por los <span class="text-orange-400 dark:text-orange-400">líderes</span> del sector`
+    subTitle="Servicio Técnico Oficial de:"
+  />
+
+  <span id="equipo"></span>
+  <!-- <HeroSectionAlt
+    title="Empresa"
+    subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública. La empresa se consolidó como referente en el sector y actualmente, Sergi Rocha, hijo de Antonio, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
+  /> -->
+
+  <MainSection
+  title="Empresa con más de 50 años de experiencia"
+  subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública."
+  subTitle2="La empresa se consolidó como referente en el sector y actualmente, Sergi Rocha, hijo de Antonio, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
+  btnExists={true}
+  btnTitle="Contacta con nosotros"
+  btnURL="#contacto"
+/>
+
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-5xl justify-center mx-auto">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1664574654529-b60630f33fdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1669824774762-65ddf29bee56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
+</div>
+
+<FeaturesStats
+    title="By the Numbers"
+    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    mainStatTitle="96%"
+    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+    stats={[
+      {
+        stat: "99.8%",
+        description: "project completion rate",
+      },
+      {
+        stat: "5,000+",
+        description: "successful installations",
+      },
+      {
+        stat: "85%",
+        description: "client growth year-over-year",
+      },
+    ]}
+  />
+
+
+<!-- Team -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Title -->
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Nuestro equipo</h2>
+  </div>
+  <!-- End Title -->
+
+  <!-- Grid -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+    <div class="text-center">
+      <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+      <div class="mt-2 sm:mt-4">
+        <h3 class="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200">
+          David Forren
+        </h3>
+        <p class="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400">
+          Founder / CEO
+        </p>
+      </div>
+    </div>
+    <!-- End Col -->
+
+    <div class="text-center">
+      <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+      <div class="mt-2 sm:mt-4">
+        <h3 class="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200">
+          Amil Evara
+        </h3>
+        <p class="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400">
+          UI/UX Designer
+        </p>
+      </div>
+    </div>
+    <!-- End Col -->
+
+    <div class="text-center">
+      <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+      <div class="mt-2 sm:mt-4">
+        <h3 class="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200">
+          Ebele Egbuna
+        </h3>
+        <p class="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400">
+          Support Consultant
+        </p>
+      </div>
+    </div>
+    <!-- End Col -->
+
+    <div class="text-center">
+      <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+      <div class="mt-2 sm:mt-4">
+        <h3 class="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-neutral-200">
+          Maria Powers
+        </h3>
+        <p class="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-neutral-400">
+          Director of sales
+        </p>
+      </div>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Team -->
+      
+  <span id="faq"></span>
+
+  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+
+  <span id="contacto"></span>
+  
+</MainLayout>
