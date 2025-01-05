@@ -1,6 +1,6 @@
 # Astro Project
 
-This project uses Astro to build a fast and secure web application.
+This project uses Astro to build a fast and secure web application, for the Fills de Rocha i Lopez website.
 
 ## Features
 
