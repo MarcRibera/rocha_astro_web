@@ -10,6 +10,7 @@ import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import MainSection from "@/components/ui/blocks/MainSection.astro";
 import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
+import CustomGallery from "@/components/sections/gallery/CustomGallery.astro";
 
 ---
 
@@ -26,7 +27,7 @@ import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
     starCount={4}
     alt="Motor de alta potencia ideal para maquinaria de construcción y jardinería"
   />
-  
+
   <span id="servicios"></span>
   <FeaturesGeneral
     title=`<span class="text-orange-500 dark:text-orange-400">Servicios</span> </br> que tenemos para ti`
@@ -40,12 +41,12 @@ import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
     subTitle="Servicio Técnico Oficial de:"
   />
 
-  <span id="equipo"></span>
+
   <!-- <HeroSectionAlt
     title="Empresa"
     subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública. La empresa se consolidó como referente en el sector y actualmente, Sergi Rocha, hijo de Antonio, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
   /> -->
-
+  <span id="empresa"></span>
   <MainSection
   title="Empresa con más de 50 años de experiencia"
   subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública."
@@ -55,20 +56,7 @@ import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
   btnURL="#contacto"
 />
 
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-5xl justify-center mx-auto">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1664574654529-b60630f33fdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1669824774762-65ddf29bee56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-  <img class="w-full size-40 object-cover" src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Image">
-</div>
+<CustomGallery></CustomGallery>
 
 <FeaturesStats
     title="By the Numbers"
@@ -92,7 +80,7 @@ import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
   />
 
 
-<!-- Team -->
+<span id="equipo"></span>
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   <!-- Title -->
   <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
