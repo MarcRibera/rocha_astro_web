@@ -41,12 +41,12 @@ const { title, subTitle, src, alt, features } = Astro.props;
   </div>
 
   <!-- Displaying the main content consisting of title, subtitle, and several `IconBlock` components -->
-  <div class="mt-5 grid gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-12">
+  <div class="mt-5 grid gap-8 xl:mt-16 xl:grid-cols-3 xl:gap-12">
     <!-- Block for title and subtitle -->
     <div class="lg:col-span-1">
       <!-- Rendering title -->
       <h2
-        class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl"
+        class="text-balance text-2xl text-center font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:text-left"
       >
       <Fragment set:html={title} />
       </h2>
@@ -67,7 +67,7 @@ const { title, subTitle, src, alt, features } = Astro.props;
         { features &&
           features.map((feature) => (
             <IconBlock heading={feature.heading} content={feature.content}>
-              <Icon name={feature.svg} />
+              <Icon name={feature.svg}/>
             </IconBlock>
           ))
         }
