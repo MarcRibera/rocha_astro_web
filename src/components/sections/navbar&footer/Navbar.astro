@@ -1,6 +1,6 @@
 ---
 //Import relevant dependencies
-import ThemeIcon from "@components/ThemeIcon.astro";
+// import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
@@ -16,7 +16,6 @@ const homeUrl =  "/";
 
 
 // Global declaration for gsap animation library
-
 declare global {
   interface Window {
     HSCollapse: any;
@@ -35,13 +34,14 @@ declare global {
   >
     <div class="flex items-center justify-between">
       <!-- Brand logo -->
-      <a
+      <!-- <a
         class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
         href={homeUrl}
         aria-label="Brand"
       >
-        <!-- <BrandLogo class="h-auto md:w-40 w-32"/> -->
-      </a>
+        <BrandLogo class="h-auto md:w-40 w-32"/> 
+      </a> -->
+
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
         <button
@@ -82,11 +82,13 @@ declare global {
           </svg>
         </button>
       </div>
+
       <!-- ThemeIcon component specifically for smaller screens -->
-      <span class="inline-block md:hidden">
+      <!-- <span class="inline-block md:hidden">
         <ThemeIcon />
-      </span>
+      </span> -->
     </div>
+
     <!-- Contains navigation links -->
     <div
       id="navbar-collapse-with-animation"
@@ -102,16 +104,18 @@ declare global {
         ))}
 
         <LanguagePicker />
+        
         <!-- ThemeIcon component specifically for larger screens -->
-        <span class="hidden md:inline-block">
+        <!-- <span class="hidden md:inline-block">
           <ThemeIcon />
-        </span>
+        </span> -->
       </div>
     </div>
   </nav>
 </header>
 <!-- Theme Appearance script to manage light/dark modes -->
 <script is:inline>
+  // Function to handle theme appearance
   const HSThemeAppearance = {
     init() {
       const defaultTheme = "default";
@@ -214,6 +218,8 @@ declare global {
       });
     });
   });
+
+  
 </script>
 <!--Import the necessary Collapse and Overlay plugins-->
 <!--https://preline.co/plugins/html/collapse.html-->
