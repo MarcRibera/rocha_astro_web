@@ -7,16 +7,16 @@
   {
     "heading": "Coche Taller",
     "content": "Disponemos de taller móvil para realizar reparaciones rápidas y eficaces directamente en el lugar donde se encuentre tu maquinaria.",
-    "svg": "tools"
+    "svg": "car"
   },
   {
     "heading": "Ventas y asesoramiento",
     "content": "Descubre nuestra amplia gama de generadores, maquinaria forestal y de jardinería, equipos de construcción y accesorios para caravaning.",
-    "svg": "verified"
+    "svg": "price"
   },
   {
     "heading": "Automatismos",
     "content": "Soluciones innovadoras para optimizar procesos y garantizar resultados eficientes",
-    "svg": "books"
+    "svg": "automatism"
   }
 ]
