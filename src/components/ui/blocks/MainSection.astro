@@ -1,6 +1,7 @@
 ---
 // Import PrimaryCTA component
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "../buttons/SecondaryCTA.astro";
 
 // Destructure the props passed to the Astro component
 const { title, subTitle,subTitle2, btnExists, btnTitle, btnURL } = Astro.props;
@@ -24,7 +25,7 @@ interface Props {
     <h2
     class="mb-4 text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
   >
-    {title}
+    <Fragment set:html={title} />
   </h2>
 
     <p
@@ -45,7 +46,7 @@ interface Props {
     {
       btnExists ? (
         <div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <PrimaryCTA title={btnTitle} url={btnURL} />
+          <SecondaryCTA title={btnTitle} url={btnURL} />
         </div>
       ) : null
     }

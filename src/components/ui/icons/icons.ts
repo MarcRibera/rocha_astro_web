@@ -10,6 +10,30 @@ export const Icons = {
     height: 48,
     viewBox: '0 -960 960 960',
   },
+  phone: {
+    paths: [
+      {
+        d: 'M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z',
+      },
+    ],
+    class:
+      'max-w-5 mt-1 h-8 w-8 flex-shrink-0 fill-neutral-400 dark:fill-neutral-400',
+    width: 34,
+    height: 34,
+    viewBox: '0 0 32 32',
+  },
+  email: {
+    paths: [
+      {
+        d: 'M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z',
+      },
+    ],
+    class:
+      'max-w-5 mt-1 h-8 w-8 flex-shrink-0 fill-neutral-400 dark:fill-neutral-400',
+    width: 34,
+    height: 34,
+    viewBox: '0 0 32 32',
+  },
   books: {
     paths: [
       {

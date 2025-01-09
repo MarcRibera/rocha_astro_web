@@ -4,6 +4,7 @@
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
+import Icon from "@/components/ui/icons/Icon.astro";
 // import frStrings from "@utils/fr/navigation.ts";
 
 // Select the correct translation based on the page's lang prop:
@@ -32,15 +33,20 @@ declare global {
     class="relative mx-2 w-full rounded-[8px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
-    <div class="flex items-center justify-between">
-      <!-- Brand logo -->
-      <!-- <a
-        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        href={homeUrl}
-        aria-label="Brand"
-      >
-        <BrandLogo class="h-auto md:w-40 w-32"/> 
-      </a> -->
+  
+    <div class="flex items-center justify-between gap-4">
+      <!-- contact info -->
+      <div class="flex items-center">
+        <Icon name="phone" />
+        <p class="whitespace-nowrap text-xs text-neutral-400 dark:text-neutral-400"><a href="tel:+34933333753">933 333 753</a> </p>
+      </div>
+
+      <div class="hidden lg:flex items-center">
+        <Icon name="email"/>
+        <p class="whitespace-nowrap text-sm text-neutral-400 dark:text-neutral-400">
+          <a href="mailto:fillsrocha@fillsrocha.com">fillsrocha@fillsrocha.com</a>
+           </p>
+      </div>
 
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
