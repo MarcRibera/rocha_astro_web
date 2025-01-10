@@ -1,8 +1,9 @@
 import ogImageSrc from '@images/social.png';
 
 export const SITE = {
-  title: 'Fills de Rocha i López - Maquinaria y Generadores',
-  tagline: 'Reparación, venta y automatización en Hospitalet',
+  title: 'Fills de Rocha i López',
+  tagline:
+    'Maquinaria y Generadores, Reparación, venta y automatización en Hospitalet',
   description:
     'Especialistas en reparación, venta y automatización de generadores, maquinaria de obra pública y jardinería. Más de 50 años de experiencia en Hospitalet ofreciendo confianza y calidad.',
   description_short:
