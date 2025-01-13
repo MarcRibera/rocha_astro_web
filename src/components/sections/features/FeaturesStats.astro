@@ -25,11 +25,13 @@ type Stat = {
 >
   <div class="max-w-screen-md">
     <!-- Main title -->
+    {title??
     <h2
       class="mb-4 text-balance text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"
     >
       {title}
     </h2>
+    }
     <!-- Subtitle -->
     {subTitle &&
     <p
