@@ -4,6 +4,7 @@ import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
 import { SITE } from "@data/constants";
+import HeroSection from "@/components/sections/landing/HeroSection.astro";
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -46,13 +47,27 @@ We set the language of the page to English and add classes for scrollbar and scr
   <body
     class="bg-neutral-200 selection:bg-neutral-700 selection:text-neutral-400 dark:bg-neutral-800"
   >
-    <!--
-    Setting up the main structure of the page.
-    The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
-    -->
+    
+    <!-- Not the best place, but, it's here for full with img background -->
+    <Navbar />
+    <span id="home"></span>
+    <HeroSection
+    title=`<span class="text-neutral-400"> Especialistas en reparación y venta de</span> <span
+    class="text-yellow-500 dark:text-orange-400">maquinaria</span>`
+    subTitle="50 años dedicados a la reparación y venta de maquinaria de construcción, jardinería, caravaning y generadors."
+    primaryBtn="Contacta con nosotros"
+    primaryBtnURL="#contacto"
+    withReview={true}
+    rating=`<span class="font-bold">4.9</span> / 5`
+    starCount={4}
+    alt="Motor de alta potencia ideal para maquinaria de construcción y jardinería"
+    />
+
+
+
     <!-- removed for next div px-4 sm:px-6 lg:px-8" -->
     <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-      <Navbar />
+      
       <main>
         <slot />
       </main>
