@@ -5,9 +5,9 @@ export const SITE = {
   tagline:
     'Maquinaria y Generadores, Reparación, venta y automatización en Hospitalet',
   description:
-    'Especialistas en reparación, venta y automatización de generadores, maquinaria de obra pública y jardinería. Más de 50 años de experiencia en Hospitalet ofreciendo confianza y calidad.',
+    'Especialistas en reparación, venta y automatización de generadores, maquinaria de obra pública y jardinería. Más de 60 años de experiencia en Hospitalet ofreciendo confianza y calidad.',
   description_short:
-    'Reparación y automatización de generadores y maquinaria en Hospitalet con 50 años de experiencia.',
+    'Reparación y automatización de generadores y maquinaria en Hospitalet con 60 años de experiencia.',
   url: 'https://fillsrocha.com',
   author: 'Fills de Rocha i López',
 };
