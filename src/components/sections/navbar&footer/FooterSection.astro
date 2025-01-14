@@ -21,15 +21,14 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
     class="mx-auto w-full max-w-[85rem] px-4 py-8 2xl:max-w-screen-2xl"
   >
     <div
-      class="grid sm:flex sm:items-center sm:justify-between sm:gap-y-0"
+      class="grid sm:flex sm:items-center sm:justify-between sm:gap-y-0 sm:text-center"
     >
-      <div class="flex items-center">
-        <BrandLogo class="h-auto w-32" />
-        
-        </div>
+      <div class="flex items-center justify-center">
+        <BrandLogo class="h-auto w-48" />  
+      </div>
       <!-- Copyright -->
-      <div class="flex items-center justify-between">
-        <p class="text-sm text-neutral-600 dark:text-neutral-400">
+      <div class="flex items-center text-center my-4 sm:my-4">
+        <p class="text-sm text-neutral-600 dark:text-neutral-400 ">
           © <span id="current-year"></span> {SITE.title}. {crafted}
           <a
             class="rounded-lg font-medium underline underline-offset-2 outline-none ring-zinc-500 transition duration-300 hover:text-neutral-700 hover:decoration-dashed focus:outline-none focus-visible:ring dark:ring-zinc-200 dark:hover:text-neutral-300"
@@ -44,10 +43,9 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
       
 
       <!-- Social Brands -->
-      <div class="flex items-center">
+      <div class="text-center mt-4 md:mt-0 sm:mt-4">
        
-        
-          <a href="/legal_fills_rocha.pdf" target="_blank" rel="noopener noreferrer" class="ml-10">
+          <a href="/legal_fills_rocha.pdf" target="_blank" rel="noopener noreferrer" >
             <p class="text-sm text-neutral-600 dark:text-neutral-400">  
               Condiciones de uso
             </p>  
