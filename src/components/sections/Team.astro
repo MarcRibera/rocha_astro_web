@@ -1,3 +1,12 @@
+---
+import { Image } from "astro:assets"
+import sergi from "@/assets/team/sergi.jpg"
+import mario from "@/assets/team/mario.jpg"
+import toni from "@/assets/team/toni.jpg"
+import merche from "@/assets/team/merche.jpg"
+
+---
+
 <div class="relative mx-auto max-w-[85rem] my-6 md:my-12 lg:my-24 xl:my-18 px-4 py-8 sm:px-6 lg:px-8">
     
     <!-- Title -->
@@ -9,7 +18,7 @@
     <!-- Grid -->
     <div class=" grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0">
       <div class="text-center">
-        <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/team/sergi.jpg" alt="Avatar">
+        <Image class="rounded-xl sm:size-48 lg:size-60 mx-auto" src={sergi} alt="Sergi Jefe taller" />
         <div class="mt-2 sm:mt-4">
           <h3 class="text-sm font-medium text-orange-300 sm:text-base lg:text-lg">
             Sergi Rocha
@@ -22,7 +31,7 @@
       <!-- End Col -->
   
       <div class="text-center">
-        <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/team/toni.jpg" alt="Avatar">
+        <Image class="rounded-xl sm:size-48 lg:size-60 mx-auto" src={toni} alt="Antonio director" />
         <div class="mt-2 sm:mt-4">
           <h3 class="text-sm font-medium sm:text-base lg:text-lg text-orange-300">
             Antonio Rocha
@@ -35,7 +44,7 @@
       <!-- End Col -->
   
       <div class="text-center">
-        <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/team/merche.jpg" alt="Avatar">
+        <Image class="rounded-xl sm:size-48 lg:size-60 mx-auto" src={merche} alt="Mercè administración" />
         <div class="mt-2 sm:mt-4">
           <h3 class="text-sm font-medium sm:text-base lg:text-lg text-orange-300">
             Mercè Llimós
@@ -48,7 +57,7 @@
       <!-- End Col -->
   
       <div class="text-center">
-        <img class="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/team/mario.jpg" alt="Avatar">
+        <Image class="rounded-xl sm:size-48 lg:size-60 mx-auto" src={mario} alt="Mario técnico" />
         <div class="mt-2 sm:mt-4">
           <h3 class="text-sm font-medium sm:text-base lg:text-lg text-orange-300">
             Mario

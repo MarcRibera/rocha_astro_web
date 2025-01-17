@@ -1,17 +1,33 @@
+---
+import { Image } from 'astro:assets';
+
+import img5 from "@/assets/gallery/gallery-5.jpg"
+import img7 from "@/assets/gallery/gallery-7.jpg"
+import img8 from "@/assets/gallery/gallery-8.jpg"
+import img10 from "@/assets/gallery/gallery-10.jpg"
+import img2 from "@/assets/gallery/gallery-2.jpg"
+import img6 from "@/assets/gallery/gallery-6.jpg"
+import img4 from "@/assets/gallery/gallery-4.jpg"
+import img1 from "@/assets/gallery/gallery-1.jpg" 
+import img9 from "@/assets/gallery/gallery-9.jpg" 
+import img3 from "@/assets/gallery/gallery-3.jpg" 
+---
+
+
 <div class="m-6  mr-0 lg:mr-20 grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-5xl justify-center mx-auto">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-5.jpg" alt="Operarios trabajando">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-7.jpg" alt="neumatico oruga">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-8.jpg" alt="Operario con herramienta subiendo escalera">
+  <Image class="w-full size-40 object-cover" src={img5} alt="Operarios trabajando" />
+  <Image class="w-full size-40 object-cover" src={img7} alt="neumatico oruga" />
+  <Image class="w-full size-40 object-cover" src={img8} alt="Operario con herramienta subiendo escalera" />
   <span class="hidden sm:block"></span>
   
-  <img class="w-full size-40 object-cover opacity-90" src="/gallery/gallery-10.jpg" alt="Taller vista general">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-2.jpg" alt="Operario entrando en administración">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-6.jpg" alt="Excavadora">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-4.jpg" alt="Adminsitrativa gestionando cajas">
+  <Image class="w-full size-40 object-cover opacity-90" src={img10} alt="Taller vista general" />
+  <Image class="w-full size-40 object-cover" src={img2} alt="Operario entrando en administración" />
+  <Image class="w-full size-40 object-cover" src={img6} alt="Excavadora" />
+  <Image class="w-full size-40 object-cover" src={img4} alt="Adminsitrativa gestionando cajas" />
   
   <span class="hidden sm:block"></span>
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-1.jpg" alt="Operario manejando toro">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-9.jpg" alt="Operarios arreglando motor">
-  <img class="w-full size-40 object-cover" src="/gallery/gallery-3.jpg" alt="Mano de operario sobre engranaje">
+  <Image  class="w-full size-40 object-cover" src={img1} alt="Operario manejando toro" />
+  <Image  class="w-full size-40 object-cover" src={img9} alt="Operarios arreglando motor" />
+  <Image  class="w-full size-40 object-cover" src={img3} alt="Mano de operario sobre engranaje" />
   <span class="hidden sm:block"></span>
-  </div>
+</div>
