@@ -3,7 +3,7 @@
 // import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
-import LanguagePicker from "@components/ui/LanguagePicker.astro";
+// import LanguagePicker from "@components/ui/LanguagePicker.astro";
 import Icon from "@/components/ui/icons/Icon.astro";
 // import frStrings from "@utils/fr/navigation.ts";
 
@@ -26,7 +26,7 @@ declare global {
 
 <!-- Main header component -->
 <header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start px-4 sm:px-6 lg:px-8"
+  class="fixed inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start px-4 sm:px-6 lg:px-8"
 >
   <!-- Navigation container -->
   <nav
@@ -109,7 +109,7 @@ declare global {
           <NavLink url={link.url} name={link.name} />
         ))}
 
-        <LanguagePicker />
+        <!-- <LanguagePicker /> -->
         
         <!-- ThemeIcon component specifically for larger screens -->
         <!-- <span class="hidden md:inline-block">
