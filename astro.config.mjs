@@ -7,7 +7,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: 'https://screwfast.uk',
+  site: 'https://fillsrocha.com',
   image: {
     domains: ['images.unsplash.com'],
   },
@@ -29,7 +29,7 @@ export default defineConfig({
         defaultLocale: 'en', // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
         locales: {
           en: 'en', // The `defaultLocale` value must present in `locales` keys
-          fr: 'fr',
+          // fr: 'fr',
         },
       },
     }),
