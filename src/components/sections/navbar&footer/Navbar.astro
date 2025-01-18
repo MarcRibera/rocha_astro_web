@@ -119,6 +119,36 @@ declare global {
     </div>
   </nav>
 </header>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  
+  const navLinks: HTMLAnchorElement[] = Array.from(document.querySelectorAll("nav a"));
+
+  interface Link extends HTMLAnchorElement {
+  href: string;
+}
+  navLinks.forEach((link: Link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); 
+
+      const targetId = link.getAttribute("href")?.replace("#", "");
+    
+      if(targetId){
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth", // Desplaçament suau
+            block: "start", // Porta la secció seleccionada al començament del viewport
+          });
+        }
+      }
+    });
+  });
+});
+
+</script>
+
+
 <!-- Theme Appearance script to manage light/dark modes DISABLED -->
 <!-- <script is:inline>
   const HSThemeAppearance = {
