@@ -16,61 +16,114 @@ import Contact from "@/components/sections/Contact.astro";
 ---
 
 <MainLayout>
-  <span id="servicios"></span>
-  <FeaturesGeneral
-    title=`<span class="text-orange-500 dark:text-orange-400">Servicios</span> </br> que tenemos para ti`
-    subTitle=""
-    alt="Servicios en cajas flotantes"
-    features={features}
-  />
+  <section id="servicios">
+    <FeaturesGeneral
+      title=`<span class="text-orange-500 dark:text-orange-400">Servicios</span> </br> que tenemos para ti`
+      subTitle=""
+      alt="Servicios en cajas flotantes"
+      features={features}
+    />
 
-  <ClientsSection
-    title=`Respaldados por los <span class="text-orange-400 dark:text-orange-400">líderes</span> del sector`
-    subTitle="Servicio Técnico Oficial de:"
-  />
+    <ClientsSection
+      title=`Respaldados por los <span class="text-orange-400 dark:text-orange-400">líderes</span> del sector`
+      subTitle="Servicio Técnico Oficial de:"
+    />
+  </section>
+  <section id="empresa">
+    <MainSection
+    title=`<span class="text-orange-500 dark:text-orange-400">Empresa</span> con más de 60 años de experiencia`
+    subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública."
+    subTitle2="La empresa se consolidó como referente en el sector y actualmente, la tercera generación de la mano de Sergi Rocha, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
+    btnExists={true}
+    btnTitle="Contacta con nosotros"
+    btnURL="#contacto"
+    />
+  
+    <CustomGallery></CustomGallery>
+  
+    <FeaturesStats
+        title=""
+        subTitle="Nuestro compromiso con la calidad y la experiencia nos respalda en cada servicio que ofrecemos. En Fills Rocha, trabajamos para garantizar soluciones duraderas en maquinaria y equipos para tus proyectos."
+        mainStatTitle="96%"
+        mainStatSubTitle="de nuestros clientes valoran nuestro servicio como excelente"
+        stats={[
+          {
+            stat: "200+",
+            description: "desplazamientos anuales",
+          },
+          {
+            stat: "17.000km+",
+            description: "para atender sus necesidades",
+          },
+          {
+            stat: "800",
+            description: "reparaciones anuales",
+          },
+        ]}
+    />
+  </section>
 
-  <span id="empresa"></span>
-  <MainSection
-  title=`<span class="text-orange-500 dark:text-orange-400">Empresa</span> con más de 60 años de experiencia`
-  subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública."
-  subTitle2="La empresa se consolidó como referente en el sector y actualmente, la tercera generación de la mano de Sergi Rocha, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
-  btnExists={true}
-  btnTitle="Contacta con nosotros"
-  btnURL="#contacto"
-  />
+  <section id="equipo">
+    <Team />
+  </section>
+  <section id="faq">
+    <FAQ title="FAQ <br />Preguntas frecuentes" faqs={faqs} />
+  </section>
 
-  <CustomGallery></CustomGallery>
+  <section id="contacto">
+    <Contact />
+  </section>
+</MainLayout>
 
-  <FeaturesStats
-      title=""
-      subTitle="Nuestro compromiso con la calidad y la experiencia nos respalda en cada servicio que ofrecemos. En Fills Rocha, trabajamos para garantizar soluciones duraderas en maquinaria y equipos para tus proyectos."
-      mainStatTitle="96%"
-      mainStatSubTitle="de nuestros clientes valoran nuestro servicio como excelente"
-      stats={[
-        {
-          stat: "200+",
-          description: "desplazamientos anuales",
-        },
-        {
-          stat: "17.000km+",
-          description: "para atender sus necesidades",
-        },
-        {
-          stat: "800",
-          description: "reparaciones anuales",
-        },
-      ]}
-  />
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section[id]");
+  console.log(sections);
+  const navLinks = document.querySelectorAll("nav a");
 
-  <span id="equipo"></span>
-  <Team />
+  const updateActiveLink = () => {
+    const viewportCenter = window.innerHeight / 2;
 
-  <span id="faq"></span>
-  <FAQ title="FAQ <br />Preguntas frecuentes" faqs={faqs} />
+    let closestSection = null;
+    let minDistance = Infinity;
 
-  <span id="contacto"></span>
-  <Contact />
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const distanceToCenter = Math.abs(sectionTop - viewportCenter);
+      if (distanceToCenter < minDistance) {
+        minDistance = distanceToCenter;
+        closestSection = section;
+      }
+    });
 
+    if (closestSection ) {
+      const id = (closestSection as Element).getAttribute("id");
+      console.log(id)
+      if (id) setActiveNavItem(id);
+    }
+  };
 
   
-</MainLayout>
+  window.addEventListener("scroll", updateActiveLink);
+  updateActiveLink();
+
+  function setActiveNavItem(id:string ) {
+    let url = id
+    let navBar = document.getElementById("navbar-collapse-with-animation");
+    if (navBar) {
+      const links = navBar.querySelectorAll('a');
+      console.log(links)
+      links.forEach(link => {
+        link.classList.remove(
+          "text-orange-300", "dark:text-orange-300", "dark:hover:opacity-100"
+        );
+        if(link.id.replace('#','') === url) {
+          link.classList.add("text-orange-300", "dark:text-orange-300", "dark:hover:opacity-100");
+        }
+      });
+    }
+  }
+});
+
+
+</script>
