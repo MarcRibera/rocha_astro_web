@@ -76,11 +76,9 @@ import Contact from "@/components/sections/Contact.astro";
 </MainLayout>
 
 <script>
+// set active nav item on scroll
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section[id]");
-  console.log(sections);
-  const navLinks = document.querySelectorAll("nav a");
-
   const updateActiveLink = () => {
     const viewportCenter = window.innerHeight / 2;
 
@@ -98,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (closestSection ) {
       const id = (closestSection as Element).getAttribute("id");
-      console.log(id)
       if (id) setActiveNavItem(id);
     }
   };
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let navBar = document.getElementById("navbar-collapse-with-animation");
     if (navBar) {
       const links = navBar.querySelectorAll('a');
-      console.log(links)
       links.forEach(link => {
         link.classList.remove(
           "text-orange-300", "dark:text-orange-300", "dark:hover:opacity-100"
