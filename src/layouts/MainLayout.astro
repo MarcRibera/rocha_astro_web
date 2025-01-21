@@ -6,6 +6,12 @@ import FooterSection from "@components/sections/navbar&footer/FooterSection.astr
 import { SITE } from "@data/constants";
 import HeroSection from "@/components/sections/landing/HeroSection.astro";
 
+import HeroData from "@data/hero.json"
+import catHeroData from "@data/cat/hero.json"
+
+// Select the correct translation 
+const heroData = Astro.currentLocale === "cat" ? catHeroData : HeroData;
+
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
 
@@ -26,7 +32,6 @@ We set the language of the page to English and add classes for scrollbar and scr
   <head>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
-    <!-- Define the title of the page -->
     <title>{title}</title>
     <script is:inline>
       // Dark mode HARDCODED
@@ -53,17 +58,16 @@ We set the language of the page to English and add classes for scrollbar and scr
     <Navbar />
     <!-- Not the best place for HOME secition, but, it's here for full with img background -->
     <section id="home">
-    <HeroSection
-    title=`<span class="text-neutral-400"> Especialistas en reparación y venta de</span> <span
-    class="text-yellow-500 dark:text-orange-400">maquinaria</span>`
-    subTitle="60 años dedicados a la reparación y venta de maquinaria de construcción, jardinería, caravaning y generadores."
-    primaryBtn="Contacta con nosotros"
-    primaryBtnURL="#contacto"
-    withReview={true}
-    rating=`<span class="font-bold">4.9</span> / 5`
-    starCount={4}
-    alt="Motor de alta potencia ideal para maquinaria de construcción y jardinería"
-    />
+      <HeroSection
+      title={heroData.title}
+      subTitle={heroData.subtitle}
+      primaryBtn={heroData.primaryBtn}
+      alt={heroData.alt}
+      primaryBtnURL="#contacto"
+      rating=`<span class="font-bold">4.9</span> / 5`
+      withReview={true}
+      starCount={4}
+      />
     </section>
 
 
