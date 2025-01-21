@@ -1,0 +1,61 @@
+---
+import Icon from "@components/ui/icons/Icon.astro";
+import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
+import enStrings from "@utils/navigation.ts";
+---
+
+<section
+  class="mx-auto max-w-[65rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-[70rem]"
+>
+
+<div class="grid grid-cols-1 md:grid-cols-[65%,35%] gap-6">
+  
+  <!-- Map -->
+  <div>
+    <div class=" mb-10 text-right">
+      <!-- Section title -->
+      <h2
+      class="mb-4 text-balance text-4xl font-bold leading-tight tracking-tight text-orange-400  md:text-5xl lg:text-5xl"
+    >
+      Contacte
+    </h2>
+  </div>
+      <iframe style="filter: grayscale(100%) invert(90%) contrast(90%);" 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5989.779220013305!2d2.107056573117897!3d41.354753069637496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498f2e8efc187%3A0xf965fb5ee9f29af0!2sFills%20de%20Rocha%20I%20L%C3%B3pez%2C%20S.L.!5e0!3m2!1sca!2ses!4v1736362735531!5m2!1sca!2ses&amp" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Iframe mapa ubicación Empresa fills rocha i lopez"></iframe>
+  </div>
+
+  <!-- Contact info -->
+  <div class="p-6  text-left pt-4 md:pt-20 xl:pt-20">
+    <div class="mt-4">
+      <h3 class="font-bold text-neutral-200">Direcció</h3>
+      <p class="text-neutral-600 dark:text-neutral-400">Avda. Pau Casals, 132</p>
+      <p class="text-neutral-600 dark:text-neutral-400">Hospitalet del Llobregat</p>
+    </div>
+    
+    <div class="mt-4" >
+      <p class="text-neutral-600 dark:text-neutral-400"><span class="font-bold text-orange-300"> Tel: </span><a href="tel:+34933333753">933 333 753</a></p>
+      <p class="text-neutral-600 dark:text-neutral-400"><span class="font-bold text-orange-300"> Tel: </span></span><a href="tel:+34933348071">933 348 071</a></p>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        <span class="font-bold text-orange-300">Email:</span>
+        <a href="mailto:fillsrocha@fillsrocha.com" class="hover:underline">
+          fillsrocha@fillsrocha.com
+        </a>
+      </p>
+    </div>
+    
+    <div class="mt-4">
+      <h3 class="font-bold text-neutral-200">Horari Comercial:</h3>
+      <p class="text-neutral-600 dark:text-neutral-400">Lunes a Viernes</p>
+      <p class="text-neutral-600 dark:text-neutral-400">7:30h - 15:30h</p>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="font-bold text-neutral-200">Xarxes</h3>
+      <FooterSocialLink url={enStrings.socialLinks.insta}>
+        <Icon name="instagramFooter" />
+      </FooterSocialLink>
+    </div>
+  </div>
+  
+</div>
+</section>

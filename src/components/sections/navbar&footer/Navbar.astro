@@ -3,7 +3,7 @@
 // import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
-// import LanguagePicker from "@components/ui/LanguagePicker.astro";
+import LanguagePicker from "@components/ui/LanguagePicker.astro";
 import Icon from "@/components/ui/icons/Icon.astro";
 // import frStrings from "@utils/fr/navigation.ts";
 
@@ -41,7 +41,7 @@ declare global {
         <p class="whitespace-nowrap text-xs text-neutral-400 dark:text-neutral-400"><a href="tel:+34933333753">933 333 753</a> </p>
       </div>
 
-      <div class=" hidden xs:flex items-center">
+      <div class="hidden lg:flex md:items-center">
         <Icon name="email"/>
         <p class="whitespace-nowrap text-sm text-neutral-400 dark:text-neutral-400">
           <a href="mailto:fillsrocha@fillsrocha.com">fillsrocha@fillsrocha.com</a>
@@ -109,7 +109,7 @@ declare global {
           <NavLink url={link.url} name={link.name} />
         ))}
 
-        <!-- <LanguagePicker /> -->
+        <LanguagePicker />
         
         <!-- ThemeIcon component specifically for larger screens -->
         <!-- <span class="hidden md:inline-block">

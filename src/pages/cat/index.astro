@@ -8,35 +8,33 @@ import MainSection from "@/components/ui/blocks/MainSection.astro";
 import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
 import CustomGallery from "@/components/sections/gallery/CustomGallery.astro";
 import Team from "@/components/sections/Team.astro";
-import Contact from "@/components/sections/Contact.astro";
+import Contact from "@/components/sections/cat/Contact.astro";
 
-// Import Data
-import features from "@data/features.json";
-import faqs from "@data/faqs.json";
-import { teamData } from "@/data_files/team"
+import faqs from "@data/cat/faqs.json";
+import features from "@data/cat/features.json";
+import { teamData } from "@/data_files/cat/team"
 ---
-
 <MainLayout>
   <section id="servicios">
     <FeaturesGeneral
-      title=`<span class="text-orange-500 dark:text-orange-400">Servicios</span> </br> que tenemos para ti`
+      title=`<span class="text-orange-500 dark:text-orange-400">Serveis</span> </br> que tenim per a tu`
       subTitle=""
-      alt="Servicios en cajas flotantes"
+      alt="Serveis en caixes flotants"
       features={features}
     />
 
     <ClientsSection
-      title=`Respaldados por los <span class="text-orange-400 dark:text-orange-400">líderes</span> del sector`
+      title=`Recoltzats pels <span class="text-orange-400 dark:text-orange-400">líders</span> del sector`
       subTitle="Servicio Técnico Oficial de:"
     />
   </section>
   <section id="empresa">
     <MainSection
-    title=`<span class="text-orange-500 dark:text-orange-400">Empresa</span> con más de 60 años de experiencia`
-    subTitle="Fills de Rocha i López fue fundada en 1966 por Antonio Rocha Palou, comenzando con la reparación y venta de maquinaria agrícola y de jardinería. En 1990, su hijo Antonio Rocha López asumió la dirección, ampliando los servicios a generadores, automatización y maquinaria de obra pública."
-    subTitle2="La empresa se consolidó como referente en el sector y actualmente, la tercera generación de la mano de Sergi Rocha, ha tomado el relevo, modernizando el taller y adaptándose a las nuevas tecnologías. Su enfoque innovador ha permitido a la empresa mantenerse a la vanguardia del sector."
+    title=`<span class="text-orange-500 dark:text-orange-400">Empresa</span> amb més de 60 anys d'experiència`
+    subTitle="Fills de Rocha i López va ser fundada el 1966 per Antonio Rocha Palou, començant amb la reparació i venda de maquinària agrícola i de jardineria. L'any 1990, el seu fill Antonio Rocha López va assumir la direcció, ampliant els serveis a generadors, automatització i maquinària d'obra pública."
+    subTitle2="L'empresa es va consolidar com a referent en el sector i, actualment, la tercera generació, amb Sergi Rocha al capdavant, ha pres el relleu, modernitzant el taller i adaptant-se a les noves tecnologies. El seu enfocament innovador ha permès a l'empresa mantenir-se a l'avantguarda del sector."
     btnExists={true}
-    btnTitle="Contacta con nosotros"
+    btnTitle="Contacta amb nosaltres"
     btnURL="#contacto"
     />
   
@@ -44,31 +42,31 @@ import { teamData } from "@/data_files/team"
   
     <FeaturesStats
         title=""
-        subTitle="Nuestro compromiso con la calidad y la experiencia nos respalda en cada servicio que ofrecemos. En Fills Rocha, trabajamos para garantizar soluciones duraderas en maquinaria y equipos para tus proyectos."
+        subTitle="El nostre compromís amb la qualitat i l'experiència ens avala en cada servei que oferim. A Fills Rocha, treballem per garantir solucions duradores en maquinària i equips per als teus projectes."
         mainStatTitle="96%"
-        mainStatSubTitle="de nuestros clientes valoran nuestro servicio como excelente"
+        mainStatSubTitle="dels nostres clients valoren el nostre servei com a excel·lent."
         stats={[
           {
             stat: "200+",
-            description: "desplazamientos anuales",
+            description: "desplaçaments anuals",
           },
           {
             stat: "17.000km+",
-            description: "para atender sus necesidades",
+            description: "per atendre les seves necessitats",
           },
           {
             stat: "800",
-            description: "reparaciones anuales",
+            description: "reparacions anuals",
           },
         ]}
     />
   </section>
 
   <section id="equipo">
-    <Team title="Nuestro equipo" teamData={teamData} />
+    <Team title="El nostre equip" teamData={teamData} />
   </section>
   <section id="faq">
-    <FAQ title="FAQ <br />Preguntas frecuentes" faqs={faqs} />
+    <FAQ title="FAQ <br /> Preguntes freqüents" faqs={faqs} />
   </section>
 
   <section id="contacto">

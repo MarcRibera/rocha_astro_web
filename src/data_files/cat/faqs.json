@@ -1,0 +1,33 @@
+{
+  "subTitle": "Si no trobes el que busques, contacta amb nosaltres.",
+  "faqs": [
+    {
+      "question": "<p>Què reparam del sector <span class='text-orange-400'>caravaning?</span></p>",
+      "answer": "Aires condicionats, neveres, cuines, antenes i generadors"
+    },
+    {
+      "question": "<p>Què reparam del sector <span class='text-orange-400'>agrícola, jardineria i forestal?</span></p>",
+      "answer": "Motocultors, tallagespes, motoserraments i desbrossadores."
+    },
+    {
+      "question": "<p>Què reparam del sector <span class='text-orange-400'>industrial?</span></p>",
+      "answer": "Generadors, motosoldadores, hidrolimpiadores, motors d'explosió i elèctrics, elevadors i escales muntamobles."
+    },
+    {
+      "question": "<p>Què reparam del sector <span class='text-orange-400'>obres?</span></p>",
+      "answer": "Talladores de sòl, fresadores, polidores de paviment, tallamurs, perforadores i robots de demolició."
+    },
+    {
+      "question": "<p>Atenen reparacions en <span class='text-orange-400'>garantia?</span></p>",
+      "answer": "Només dels nostres representats."
+    },
+    {
+      "question": "<p>Realitzen manteniments de <span class='text-orange-400'>generadors d'emergència</span> in situ?</p>",
+      "answer": "Sí."
+    },
+    {
+      "question": "<p>Realitzen serveis a tot el <span class='text-orange-400'>territori nacional?</span></p>",
+      "answer": "Sí."
+    }
+  ]
+}
