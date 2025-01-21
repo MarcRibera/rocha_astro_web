@@ -1,9 +1,10 @@
-<svg width="2158" height="984" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5">
- <title>telair logo</title>
+<svg width="2158" height="984" xmlns="http://www.w3.org/2000/svg" 
+viewBox="0 0 2158.000000 984.000000"
+preserveAspectRatio="xMidYMid meet">
+<title>telair logo</title>
 
  <g>
-  <title>Layer 1</title>
-  <g id="svg_1" fill="#6B7280" transform="translate(0 984) scale(0.09 -0.08)">
+  <g id="svg_1" fill="#6B7280" transform="translate(170, 984) scale(0.09 -0.08)">
    <path id="svg_2" d="m7280,6040l0,-3760l560,0l560,0l0,3760l0,3760l-560,0l-560,0l0,-3760z"/>
    <path id="svg_3" d="m16166,9561c-4,-5 3,-7 14,-4c23,6 26,13 6,13c-8,0 -17,-4 -20,-9z"/>
    <path id="svg_4" d="m16282,9566c2,-1 10,-7 19,-14c13,-10 18,-10 22,0c3,8 -5,14 -20,14c-13,1 -23,1 -21,0z"/>

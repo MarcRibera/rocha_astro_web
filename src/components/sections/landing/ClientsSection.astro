@@ -48,7 +48,65 @@ import telair from "@/assets/logos/telair.svg";
     }
   </div>
 
-  <div class="mx-auto max-w-[80rem]" >
+  <div style="max-width: 80%;"  class="mx-auto">
+    <!-- Mobile logos  -->
+    <div class="md:hidden grid grid-cols-2 gap-4 mb-6">
+      <div class="flex items-center justify-center ">
+        <Image src={dometic} alt="dometic logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={honda} alt="honda logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={pramac} alt="pramac logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={husqvarna} alt="husqvarna logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={limge} alt="limge logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={geda} alt="geda logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={vitrifrigo} alt="vitifrigo logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={teleco} alt="teleco logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={norton} alt="norotn logo" class="max-w-40" />
+      </div>
+
+      <div class="flex items-center justify-center ">
+        <Image src={paus} alt="paus logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={gardena} alt="gerdena logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={ayerbe} alt="logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={epower} alt="epower logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={linz} alt="linz logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={mecalte} alt="mecalte logo" class="max-w-40" />
+      </div>
+      <div class="flex items-center justify-center ">
+        <Image src={telair} alt="telair logo" class="max-w-40" />
+      </div>
+
+    </div>
+  </div>
+  
+  
+    <!-- Desktop logos -->
+  <div class="hidden md:block mx-auto max-w-[80rem]" >
     <!-- logos row 1 -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-6">
       <div class="flex items-center justify-center ">
@@ -102,19 +160,17 @@ import telair from "@/assets/logos/telair.svg";
         <Image src={linz} alt="linz logo" class="max-w-40" />
       </div>
     </div>
+
+    <!-- logos row 4 -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
+          <div></div>
+          <div class="flex items-center justify-center ">
+            <Image src={mecalte} alt="mecalte logo" class="max-w-40" />
+          </div>
+          <div class="flex items-center justify-center ">
+            <Image src={telair} alt="telair logo" class="max-w-40" />
+          </div>
+          <div></div>
+      </div>
   </div>
-
-      <!-- logos row 3 -->
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
-    <div></div>
-    <div class="flex items-center justify-center ">
-      <Image src={mecalte} alt="mecalte logo" class="max-w-40" />
-    </div>
-    <div class="flex items-center justify-center ">
-      <Image src={telair} alt="telair logo" class="max-w-40" />
-    </div>
-    <div></div>
-  </div>
-
-
 </section>
