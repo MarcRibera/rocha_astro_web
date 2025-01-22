@@ -12,10 +12,10 @@ export default defineConfig({
     domains: ['images.unsplash.com'],
   },
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'cat'],
+    defaultLocale: 'es',
+    locales: ['es', 'cat'],
     fallback: {
-      cat: 'en',
+      cat: 'es',
     },
     routing: {
       prefixDefaultLocale: false,
@@ -26,10 +26,10 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: 'en', // All urls that don't contain `fr` after `https://fillsrocha.com/` will be treated as default locale, i.e. `en`
+        defaultLocale: 'es',
         locales: {
-          en: 'en', // The `defaultLocale` value must present in `locales` keys
-          cat: 'cat',
+          en: 'es',
+          cat: 'ca',
         },
       },
     }),

@@ -9,7 +9,7 @@ import { languages } from "@utils//ui";
       <a
         data-astro-prefetch
         class=" text-neutral-500 px-2 text-xs relative"
-        href={`/${lang === "en" ? "" : lang}`}
+        href={`/${lang === "es" ? "" : lang}`}
       >
         {label}
       </a>
@@ -47,7 +47,7 @@ import { languages } from "@utils//ui";
       Object.entries(languages).map(([lang, label]) => (
         <a
           class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-          href={`/${lang === "en" ? "" : lang}`}
+          href={`/${lang === "es" ? "" : lang}`}
         >
           {label}
         </a>
@@ -64,28 +64,28 @@ import { languages } from "@utils//ui";
 
 <script>
   // Type alias for supported languages
-  type TLanguage = "en" | "cat";
+  type TLanguage = "es" | "cat";
   // array of supported languages
-  const languages: TLanguage[] = ["en", "cat"];
+  const languages: TLanguage[] = ["es", "cat"];
 
   document.addEventListener("DOMContentLoaded", function () {
     // get link elements
     const languageLinks = document.querySelectorAll(".language-picker a");
 
     // Set active current language
-    let currentLang = "en";
+    let currentLang = "es";
     const url = new URL(window.location.href);
 
     if (url.pathname != "/") {
       const pathParts = url.pathname.replace("/", "")
-      currentLang = languages.includes(pathParts as TLanguage) ? pathParts : "en";
+      currentLang = languages.includes(pathParts as TLanguage) ? pathParts : "es";
     }
 
     languageLinks.forEach(ele => {
         const link = ele as HTMLAnchorElement;
         let linkLang = link.getAttribute('href')?.replace("/", "")
         link.classList.remove('active');
-        linkLang = linkLang || "en";
+        linkLang = linkLang || "es";
         if(linkLang === currentLang) {
           link.classList.add('active');
         }
@@ -111,7 +111,7 @@ import { languages } from "@utils//ui";
         if (lang === url.pathname.split("/")[1]) return;
 
         // Determine if the current URL already has a language prefix
-        const currentLang = languages.includes(pathParts[0] as TLanguage) ? pathParts[0] : "en";
+        const currentLang = languages.includes(pathParts[0] as TLanguage) ? pathParts[0] : "es";
 
 
         // Remove current language prefix from pathParts
@@ -121,7 +121,7 @@ import { languages } from "@utils//ui";
 
         // Determine if we are switching to a different language
         if (lang !== currentLang) {
-          if (lang !== "en") {
+          if (lang !== "es") {
             // Add the new language prefix for non-English
             pathParts.unshift(lang);
           }

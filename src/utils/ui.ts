@@ -1,4 +1,4 @@
 export const languages = {
-  en: 'Esp',
+  es: 'Esp',
   cat: 'Cat',
 };
