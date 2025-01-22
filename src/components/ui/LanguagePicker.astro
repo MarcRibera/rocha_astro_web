@@ -80,22 +80,17 @@ import { languages } from "@utils//ui";
       const pathParts = url.pathname.replace("/", "")
       currentLang = languages.includes(pathParts as TLanguage) ? pathParts : "en";
     }
-    
+
     languageLinks.forEach(ele => {
         const link = ele as HTMLAnchorElement;
         let linkLang = link.getAttribute('href')?.replace("/", "")
-
         link.classList.remove('active');
-        
         linkLang = linkLang || "en";
-
         if(linkLang === currentLang) {
-          console.log('sssiii')
           link.classList.add('active');
         }
       });
 
-    
     // add click event listener to each language link to switch languages
     languageLinks.forEach((element) => {
       const link = element as HTMLAnchorElement;

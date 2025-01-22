@@ -5,12 +5,16 @@ import Navbar from "@components/sections/navbar&footer/Navbar.astro";
 import FooterSection from "@components/sections/navbar&footer/FooterSection.astro";
 import { SITE } from "@data/constants";
 import HeroSection from "@/components/sections/landing/HeroSection.astro";
+import CookiesBanner from "@/components/CookiesBanner.astro";
 
 import HeroData from "@data/hero.json"
 import catHeroData from "@data/cat/hero.json"
+import catCookieData from "@data/cat/cookie.json"
+import CookieData from "@data/cookie.json"
 
 // Select the correct translation 
 const heroData = Astro.currentLocale === "cat" ? catHeroData : HeroData;
+const cookieData = Astro.currentLocale === "cat" ? catCookieData : CookieData;
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -73,12 +77,12 @@ We set the language of the page to English and add classes for scrollbar and scr
 
     <!-- removed for next div px-4 sm:px-6 lg:px-8" -->
     <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-      
       <main>
         <slot />
       </main>
     </div>
     <FooterSection />
+    <CookiesBanner title={cookieData.title} subtitle={cookieData.subtitle} />
     <style>
       /* CSS rules for the page scrollbar */
       .scrollbar-hide::-webkit-scrollbar {
