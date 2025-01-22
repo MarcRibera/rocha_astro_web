@@ -1,7 +1,7 @@
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
     class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5" 
-    viewBox="0 -5 130 100"
+    viewBox="-5 -5 130 100"
     preserveAspectRatio="xMidYMid meet"
     >
       <g fill-rule="evenodd" clip-rule="evenodd" transform="scale(0.6,0.45)">
