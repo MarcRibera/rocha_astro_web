@@ -1,9 +1,23 @@
 ---
 import { languages } from "@utils//ui";
-import Icon from "./icons/Icon.astro";
+// import Icon from "./icons/Icon.astro";
 ---
+<div class="language-picker flex items-center justify-end">
+  {
+    // Map through the list of languages, creating a link for each language
+    Object.entries(languages).map(([lang, label]) => (
+      <a
+        data-astro-prefetch
+        class=" text-neutral-500 px-2 text-xs relative"
+        href={`/${lang === "en" ? "" : lang}`}
+      >
+        {label}
+      </a>
+    ))
+  }
+</div>
 
-<div class="hs-dropdown relative inline-flex">
+<!-- <div class="hs-dropdown relative inline-flex">
   <button
     id="hs-dropdown-default"
     type="button"
@@ -40,7 +54,7 @@ import Icon from "./icons/Icon.astro";
       ))
     }
   </div>
-</div>
+</div> -->
 
 <!--Import the necessary Dropdown plugin-->
 <!--https://preline.co/plugins/html/dropdown.html-->
@@ -55,7 +69,34 @@ import Icon from "./icons/Icon.astro";
   const languages: TLanguage[] = ["en", "cat"];
 
   document.addEventListener("DOMContentLoaded", function () {
-    const languageLinks = document.querySelectorAll(".hs-dropdown-menu a");
+    // get link elements
+    const languageLinks = document.querySelectorAll(".language-picker a");
+
+    // Set active current language
+    let currentLang = "en";
+    const url = new URL(window.location.href);
+
+    if (url.pathname != "/") {
+      const pathParts = url.pathname.replace("/", "")
+      currentLang = languages.includes(pathParts as TLanguage) ? pathParts : "en";
+    }
+    
+    languageLinks.forEach(ele => {
+        const link = ele as HTMLAnchorElement;
+        let linkLang = link.getAttribute('href')?.replace("/", "")
+
+        link.classList.remove('active');
+        
+        linkLang = linkLang || "en";
+
+        if(linkLang === currentLang) {
+          console.log('sssiii')
+          link.classList.add('active');
+        }
+      });
+
+    
+    // add click event listener to each language link to switch languages
     languageLinks.forEach((element) => {
       const link = element as HTMLAnchorElement;
       const lang = link
@@ -77,6 +118,7 @@ import Icon from "./icons/Icon.astro";
         // Determine if the current URL already has a language prefix
         const currentLang = languages.includes(pathParts[0] as TLanguage) ? pathParts[0] : "en";
 
+
         // Remove current language prefix from pathParts
         if (languages.includes(pathParts[0] as TLanguage)) {
           pathParts.shift();
@@ -91,10 +133,22 @@ import Icon from "./icons/Icon.astro";
         }
 
         url.pathname = pathParts.join("/");
-        console.log(url.pathname+"/");
         
         window.location.href = url.toString();
       });
     });
   });
 </script>
+
+<style scoped>
+  .active::after {
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 2px;
+    background-color:#a3a3a3;
+    position: absolute;
+    bottom: -4px;
+    left:9px;
+  }
+</style>
