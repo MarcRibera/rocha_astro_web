@@ -17,7 +17,7 @@ const heroData = Astro.currentLocale === "cat" ? catHeroData : HeroData;
 const cookieData = Astro.currentLocale === "cat" ? catCookieData : CookieData;
 
 // Setting expected props
-const { title = SITE.title, meta, structuredData, lang = "es" } = Astro.props;
+const { title = SITE.title, meta, structuredData, lang = "es", is404 = false } = Astro.props;
 
 // Interface to type-check the properties
 interface Props {
@@ -25,6 +25,7 @@ interface Props {
   meta?: string;
   structuredData?: object;
   lang?: string;
+  is404?: boolean;
 }
 ---
 
@@ -61,7 +62,7 @@ We set the language of the page to English and add classes for scrollbar and scr
   >
     <Navbar />
     <!-- Not the best place for HOME secition, but, it's here for full with img background -->
-    <section id="home">
+    <section id="home" class:list={{ hidden: is404 }}>>
       <HeroSection
       title={heroData.title}
       subTitle={heroData.subtitle}
