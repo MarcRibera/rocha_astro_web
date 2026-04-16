@@ -4,57 +4,69 @@ import { Image } from 'astro:assets'
 interface Props {
   src: string | ImageMetadata
   alt: string
-  title?: string
   rememberClose?: boolean
+  startDate: string
+  endDate: string
 }
 
 const {
   src,
   alt,
-  title = 'Imagen',
   rememberClose = false,
+  startDate,
+  endDate,
 } = Astro.props
 
 const modalId = `auto-popup-${Math.random().toString(36).slice(2, 9)}`
 const closeButtonId = `${modalId}-close`
+const contentId = `${modalId}-content`
 const storageKey = `${modalId}-closed`
 ---
 
 <dialog
   id={modalId}
-  class="w-[min(92vw,900px)] max-w-none rounded-2xl border-0 p-0 shadow-2xl backdrop:bg-black/70"
-  aria-labelledby={`${modalId}-title`}
+  class="m-0 h-screen w-screen max-w-none border-0 bg-transparent p-0 backdrop:bg-black/0"
 >
-  <div class="relative bg-white">
-    <div class="flex items-center justify-between border-b px-4 py-3">
-      <h2 id={`${modalId}-title`} class="text-lg font-semibold text-gray-900">
-        {title}
-      </h2>
-
+  <div class="flex min-h-screen items-center justify-center px-4 py-8">
+    <div
+      id={contentId}
+      class="relative inline-block scale-95 opacity-0 transition duration-300 ease-out"
+    >
       <button
         id={closeButtonId}
         type="button"
-        class="rounded-md px-3 py-1 text-sm text-gray-600 transition hover:bg-gray-100 hover:text-black"
-        aria-label="Cerrar popup"
+        class="absolute right-2 top-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80"
+        aria-label="Tancar popup"
       >
-        Cerrar
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
       </button>
-    </div>
 
-    <div class="p-4">
       {
         typeof src === 'string' ? (
           <img
             src={src}
             alt={alt}
-            class="max-h-[80vh] w-full rounded-lg object-contain"
+            class="block h-auto max-h-[calc(100vh-4rem)] w-auto max-w-[calc(100vw-2rem)]"
             loading="lazy"
           />
         ) : (
           <Image
             src={src}
             alt={alt}
-            class="max-h-[80vh] w-full rounded-lg object-contain"
+            class="block h-auto max-h-[calc(100vh-4rem)] w-auto max-w-[calc(100vw-2rem)]"
           />
         )
       }
@@ -62,24 +74,59 @@ const storageKey = `${modalId}-closed`
   </div>
 </dialog>
 
-<script define:vars={{ modalId, closeButtonId, storageKey, rememberClose }}>
+<script define:vars={{ modalId, closeButtonId, contentId, storageKey, rememberClose, startDate, endDate }}>
   const modal = document.getElementById(modalId)
   const closeButton = document.getElementById(closeButtonId)
+  const content = document.getElementById(contentId)
 
   if (
     modal instanceof HTMLDialogElement &&
-    closeButton instanceof HTMLButtonElement
+    closeButton instanceof HTMLButtonElement &&
+    content instanceof HTMLElement
   ) {
     const isClosed = rememberClose && localStorage.getItem(storageKey) === 'true'
+    let isClosing = false
 
-    if (!isClosed) {
+    const now = new Date()
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+
+    const isWithinDateRange = now >= start && now <= end
+
+    const openModal = () => {
       modal.showModal()
       document.body.classList.add('overflow-hidden')
+
+      modal.classList.remove('backdrop:bg-black/0')
+      modal.classList.add('backdrop:bg-black/70')
+
+      requestAnimationFrame(() => {
+        content.classList.remove('scale-95', 'opacity-0')
+        content.classList.add('scale-100', 'opacity-100')
+      })
     }
 
-    closeButton.addEventListener('click', () => {
-      modal.close()
-    })
+    const closeModal = () => {
+      if (isClosing) return
+      isClosing = true
+
+      modal.classList.remove('backdrop:bg-black/70')
+      modal.classList.add('backdrop:bg-black/0')
+
+      content.classList.remove('scale-100', 'opacity-100')
+      content.classList.add('scale-95', 'opacity-0')
+
+      setTimeout(() => {
+        modal.close()
+        isClosing = false
+      }, 300)
+    }
+
+    if (isWithinDateRange && !isClosed) {
+      openModal()
+    }
+
+    closeButton.addEventListener('click', closeModal)
 
     modal.addEventListener('close', () => {
       document.body.classList.remove('overflow-hidden')
@@ -90,16 +137,14 @@ const storageKey = `${modalId}-closed`
     })
 
     modal.addEventListener('click', (event) => {
-      const rect = modal.getBoundingClientRect()
-      const isInsideDialog =
-        rect.top <= event.clientY &&
-        event.clientY <= rect.top + rect.height &&
-        rect.left <= event.clientX &&
-        event.clientX <= rect.left + rect.width
-
-      if (!isInsideDialog) {
-        modal.close()
+      if (!content.contains(event.target)) {
+        closeModal()
       }
+    })
+
+    modal.addEventListener('cancel', (event) => {
+      event.preventDefault()
+      closeModal()
     })
   }
 </script>
