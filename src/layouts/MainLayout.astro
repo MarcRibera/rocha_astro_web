@@ -6,11 +6,17 @@ import FooterSection from "@components/sections/navbar&footer/FooterSection.astr
 import { SITE } from "@data/constants";
 import HeroSection from "@/components/sections/landing/HeroSection.astro";
 import CookiesBanner from "@/components/CookiesBanner.astro";
+import PopupImage from '@/components/ui/PopupImage.astro'
+
+import myImage from '@/assets/gallery/gallery-1.jpg'
 
 import HeroData from "@data/hero.json"
 import catHeroData from "@data/cat/hero.json"
 import catCookieData from "@data/cat/cookie.json"
 import CookieData from "@data/cookie.json"
+
+
+
 
 // Select the correct translation 
 const heroData = Astro.currentLocale === "cat" ? catHeroData : HeroData;
@@ -61,6 +67,13 @@ We set the language of the page to English and add classes for scrollbar and scr
     class="bg-neutral-200 selection:bg-neutral-700 selection:text-neutral-400 dark:bg-neutral-800"
   >
     <Navbar />
+
+    <PopupImage
+    src={myImage}
+    alt="Foto de ejemplo"
+    title="Vista previa"
+  />
+
     <!-- Not the best place for HOME secition, but, it's here for full with img background -->
     <section id="home" class:list={{ hidden: is404 }}>
       <HeroSection

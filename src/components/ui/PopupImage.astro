@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  src: string | ImageMetadata
+  alt: string
+  title?: string
+  rememberClose?: boolean
+}
+
+const {
+  src,
+  alt,
+  title = 'Imagen',
+  rememberClose = false,
+} = Astro.props
+
+const modalId = `auto-popup-${Math.random().toString(36).slice(2, 9)}`
+const closeButtonId = `${modalId}-close`
+const storageKey = `${modalId}-closed`
+---
+
+<dialog
+  id={modalId}
+  class="w-[min(92vw,900px)] max-w-none rounded-2xl border-0 p-0 shadow-2xl backdrop:bg-black/70"
+  aria-labelledby={`${modalId}-title`}
+>
+  <div class="relative bg-white">
+    <div class="flex items-center justify-between border-b px-4 py-3">
+      <h2 id={`${modalId}-title`} class="text-lg font-semibold text-gray-900">
+        {title}
+      </h2>
+
+      <button
+        id={closeButtonId}
+        type="button"
+        class="rounded-md px-3 py-1 text-sm text-gray-600 transition hover:bg-gray-100 hover:text-black"
+        aria-label="Cerrar popup"
+      >
+        Cerrar
+      </button>
+    </div>
+
+    <div class="p-4">
+      {
+        typeof src === 'string' ? (
+          <img
+            src={src}
+            alt={alt}
+            class="max-h-[80vh] w-full rounded-lg object-contain"
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            class="max-h-[80vh] w-full rounded-lg object-contain"
+          />
+        )
+      }
+    </div>
+  </div>
+</dialog>
+
+<script define:vars={{ modalId, closeButtonId, storageKey, rememberClose }}>
+  const modal = document.getElementById(modalId)
+  const closeButton = document.getElementById(closeButtonId)
+
+  if (
+    modal instanceof HTMLDialogElement &&
+    closeButton instanceof HTMLButtonElement
+  ) {
+    const isClosed = rememberClose && localStorage.getItem(storageKey) === 'true'
+
+    if (!isClosed) {
+      modal.showModal()
+      document.body.classList.add('overflow-hidden')
+    }
+
+    closeButton.addEventListener('click', () => {
+      modal.close()
+    })
+
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('overflow-hidden')
+
+      if (rememberClose) {
+        localStorage.setItem(storageKey, 'true')
+      }
+    })
+
+    modal.addEventListener('click', (event) => {
+      const rect = modal.getBoundingClientRect()
+      const isInsideDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+
+      if (!isInsideDialog) {
+        modal.close()
+      }
+    })
+  }
+</script>
